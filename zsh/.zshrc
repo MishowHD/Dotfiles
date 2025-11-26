@@ -3,6 +3,7 @@
 # -----------------------------------------------------
 export EDITOR=nvim
 export ZSH="$HOME/.oh-my-zsh"
+export MANPAGER="nvim +Man!"
 
 # -----------------------------------------------------
 # oh-my-zsh plugins
@@ -44,7 +45,8 @@ alias ls='eza --icons=always'
 alias la='eza -al --icons=always'
 alias v='$EDITOR'
 alias vim='$EDITOR'
-
+alias k='kubectl'
+alias cat='bat'
 # -----------------------------------------------------
 # System
 # -----------------------------------------------------
