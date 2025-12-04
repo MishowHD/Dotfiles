@@ -10,7 +10,6 @@ export MANPAGER="nvim +Man!"
 # -----------------------------------------------------
 plugins=(
     git
-    archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
     copyfile
@@ -44,7 +43,6 @@ alias ff='fastfetch'
 alias ls='eza --icons=always'
 alias la='eza -al --icons=always'
 alias v='$EDITOR'
-alias vim='$EDITOR'
 alias k='kubectl'
 alias cat='bat'
 # -----------------------------------------------------
