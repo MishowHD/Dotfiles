@@ -3,6 +3,7 @@
 # -----------------------------------------------------
 set -gx EDITOR nvim
 set -gx MANPAGER "nvim +Man!"
+set -U fish_greeting ""
 # fish_add_path ~/.local/bin
 
 # -----------------------------------------------------
