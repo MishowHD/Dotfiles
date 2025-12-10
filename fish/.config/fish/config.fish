@@ -3,7 +3,7 @@
 # -----------------------------------------------------
 set -gx EDITOR nvim
 set -gx MANPAGER "nvim +Man!"
-fish_add_path ~/.local/bin
+# fish_add_path ~/.local/bin
 
 # -----------------------------------------------------
 # Configuration
@@ -11,7 +11,8 @@ fish_add_path ~/.local/bin
 if status is-interactive
 
     # --- Prompt ---
-    oh-my-posh init fish --config ~/.config/ohmyposh/zen.toml | source
+    starship init fish | source
+    # oh-my-posh init fish --config ~/.config/ohmyposh/zen.toml | source
  
     # --- Aliases ---
     alias c="clear"
