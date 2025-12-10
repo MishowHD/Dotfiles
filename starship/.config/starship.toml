@@ -1,7 +1,6 @@
 # "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = true
 format = """\
-  󰣇 \
   $directory\
   $git_branch$git_commit$git_state $git_status\
   $character
