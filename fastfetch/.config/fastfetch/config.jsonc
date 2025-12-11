@@ -30,20 +30,22 @@
             "type": "uptime"
         },
         {
-            "key": "│ {#34}{icon} distro  {#keys}│",
+            "key": "│ {#34}󱦟 age     {#keys}│",
+            "type": "disk",
+            "folders": "/",
+            "format": "{days} days"
+        },
+        {
+            "key": "│ {#35}{icon} distro  {#keys}│",
             "type": "os"
         },
         {
-            "key": "│ {#35} kernel  {#keys}│",
+            "key": "│ {#36} kernel  {#keys}│",
             "type": "kernel"
         },
         {
-            "key": "│ {#36} wm      {#keys}│",
+            "key": "│ {#37} wm      {#keys}│",
             "type": "wm"
-        },
-        {
-            "key": "│ {#36}󰇄 desktop {#keys}│",
-            "type": "de"
         },
         {
             "key": "│ {#31} term    {#keys}│",
@@ -55,8 +57,7 @@
         },
         {
             "key": "│ {#33}󰍛 cpu     {#keys}│",
-            "type": "cpu",
-            "showPeCoreCount": true
+            "type": "cpu"
         },
         {
             "key": "│ {#34}󰉉 disk    {#keys}│",
