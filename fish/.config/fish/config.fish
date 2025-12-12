@@ -14,7 +14,7 @@ if status is-interactive
     # --- Prompt ---
     starship init fish | source
     # oh-my-posh init fish --config ~/.config/ohmyposh/zen.toml | source
- 
+
     # --- Aliases ---
     alias c="clear"
     alias ls="eza --icons=always"
@@ -22,7 +22,7 @@ if status is-interactive
     alias ll="eza -l --icons=always"
     alias v="$EDITOR"
     alias k="kubectl"
-    alias cat="bat" 
+    alias cat="bat --style=plain"
 
     # --- System ---
     alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -31,3 +31,4 @@ if status is-interactive
     fastfetch
 
 end
+
