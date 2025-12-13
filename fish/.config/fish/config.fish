@@ -1,13 +1,21 @@
 # -----------------------------------------------------
-# Exports
+# Environment / Exports
 # -----------------------------------------------------
-set -gx EDITOR nvim
-set -gx MANPAGER "nvim +Man!"
+
+# Editor
+set -Ux EDITOR nvim
+
+# Pager 
+set -Ux PAGER bat
+
+# Manpager
+set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
+# Disable fish greeting
 set -U fish_greeting ""
-# fish_add_path ~/.local/bin
 
 # -----------------------------------------------------
-# Configuration
+# Interactive configuration
 # -----------------------------------------------------
 if status is-interactive
 
@@ -22,6 +30,8 @@ if status is-interactive
     alias ll="eza -l --icons=always"
     alias v="$EDITOR"
     alias k="kubectl"
+
+    # cat → bat
     alias cat="bat --style=plain"
 
     # --- System ---
@@ -31,4 +41,3 @@ if status is-interactive
     fastfetch
 
 end
-
