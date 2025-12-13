@@ -1,7 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export MANPAGER:bat\x20\x2dp\x20\x2dl\x20man
+SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
+SETUVAR --export MANROFFOPT:\x2dc
 SETUVAR --export PAGER:bat
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:6272a4
