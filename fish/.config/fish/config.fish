@@ -5,11 +5,11 @@
 # Editor
 set -Ux EDITOR nvim
 
-# Pager 
+# Pager
 set -Ux PAGER bat
 
 # Manpager
-set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -Ux MANPAGER "bat -p -l man"
 
 # Disable fish greeting
 set -U fish_greeting ""
