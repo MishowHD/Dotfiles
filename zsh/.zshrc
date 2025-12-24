@@ -3,7 +3,9 @@
 # -----------------------------------------------------
 export EDITOR=nvim
 export ZSH="$HOME/.oh-my-zsh"
-export MANPAGER="nvim +Man!"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+export PAGER=bat
 
 # -----------------------------------------------------
 # oh-my-zsh plugins
@@ -34,17 +36,14 @@ eval "$(starship init zsh)"
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
-
-# -----------------------------------------------------
-# General
-# -----------------------------------------------------
 alias c='clear'
 alias ff='fastfetch'
 alias ls='eza --icons=always'
 alias la='eza -al --icons=always'
 alias v='$EDITOR'
 alias k='kubectl'
-alias cat='bat'
+alias cat='bat --style=plain'
+
 # -----------------------------------------------------
 # System
 # -----------------------------------------------------
@@ -52,10 +51,6 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # -----------------------------------------------------
 # AUTOSTART
-# -----------------------------------------------------
-
-# -----------------------------------------------------
-# Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
     fastfetch
