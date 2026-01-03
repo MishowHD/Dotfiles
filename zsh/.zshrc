@@ -14,9 +14,6 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    copyfile
-    copybuffer
-    dirhistory
 )
 
 # Set-up oh-my-zsh
