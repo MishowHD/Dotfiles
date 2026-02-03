@@ -8,14 +8,6 @@ window-padding-y = 10
 window-padding-balance = true
 confirm-close-surface = false
 
-# --- CURSOR ---
-cursor-style = block
-cursor-style-blink = true
-
-# --- HISTORY AND SCROLLING ---
-mouse-scroll-multiplier = 1
-scrollback-limit = 2000
-
 # --- APPEARANCE ---
 background-opacity = 0.8
 
