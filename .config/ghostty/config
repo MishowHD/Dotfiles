@@ -13,3 +13,9 @@ background-opacity = 0.8
 
 # --- THEME ---
 theme = Catppuccin Mocha
+
+# --- SCROLL ---
+mouse-scroll-multiplier = 0.5
+
+# --- SELECTION ---
+selection-invert-fg-bg = true
