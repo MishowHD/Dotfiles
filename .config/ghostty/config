@@ -3,12 +3,11 @@ font-family = "JetBrainsMono Nerd Font"
 font-size = 13
 
 # --- WINDOW ---
+window-theme = ghostty
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 confirm-close-surface = false
-gtk-toolbar-style = flat
-gtk-titlebar = false
 
 # --- APPEARANCE ---
 background-opacity = 0.8
