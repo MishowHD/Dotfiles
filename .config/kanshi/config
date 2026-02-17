@@ -1,0 +1,9 @@
+
+profile solo {
+    output eDP-1 enable scale 1.25
+}
+
+profile esterno {
+    output eDP-1 disable
+    output * enable scale 1
+}
