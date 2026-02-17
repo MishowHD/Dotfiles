@@ -100,6 +100,9 @@
 @define-color pulseaudio-muted-color @red;
 @define-color uptime-color @green;
 @define-color updates-color @orange;
+@define-color bluetooth-color @cyan;
+@define-color bluetooth-connected-color @blue;
+@define-color bluetooth-disabled-color @red;
 
 * {
     /* Base styling for all modules */
@@ -119,7 +122,7 @@ window#waybar {
 
 /* Common module styling with border-bottom */
 #custom-playerctl, #clock, #cpu, #memory, #temperature, #battery, 
-#network, #pulseaudio, #custom-uptime, #custom-updates, #tray {
+#network,#bluetooth, #pulseaudio, #custom-uptime, #custom-updates, #tray {
     padding: 0 10px;
     margin: 0 2px;
     border-bottom: 2px solid transparent;
@@ -256,3 +259,18 @@ window#waybar {
     color: @red;
     border-bottom-color: @red;
 }
+#bluetooth {
+    color: @bluetooth-color;
+    border-bottom-color: @bluetooth-color;
+}
+
+#bluetooth.connected {
+    color: @bluetooth-connected-color;
+    border-bottom-color: @bluetooth-connected-color;
+}
+
+#bluetooth.disabled {
+    color: @bluetooth-disabled-color;
+    border-bottom-color: @bluetooth-disabled-color;
+}
+
