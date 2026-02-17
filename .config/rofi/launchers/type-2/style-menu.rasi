@@ -2,8 +2,8 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
- * Rofi Theme File
+ *
+ * Rofi Theme File - App Launcher (style-menu)
  * Rofi Version: 1.7.3
  **/
 
@@ -11,7 +11,7 @@
 configuration {
 	modi:                       "drun";
     show-icons:                 true;
-    display-drun:               " Applications";
+    display-drun:               "";
 	drun-display-format:        "{name}";
 }
 
@@ -25,7 +25,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1200px;
+    width:                       700px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -33,7 +33,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";
@@ -50,7 +50,6 @@ mainbox {
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
-    orientation:                 horizontal;
 }
 
 /*****----- Inputbar -----*****/
@@ -58,23 +57,19 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     0px;
-    border:                      0px;
-    border-radius:               0px;
+    padding:                     15px;
+    border:                      0px solid;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            @background;
+    background-color:            @background-alt;
     text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
-    orientation:                 vertical;
 }
 
 prompt {
     enabled:                     true;
-    expand:                      false;
-    padding:                     15px 50px;
-    border-radius:               10px;
-    background-color:            @selected;
-    text-color:                  @background;
+    background-color:            inherit;
+    text-color:                  inherit;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -85,11 +80,8 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    expand:                      false;
-    padding:                     15px 20px;
-    border-radius:               10px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    background-color:            inherit;
+    text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search...";
     placeholder-color:           inherit;
@@ -98,8 +90,8 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     4;
-    lines:                       1;
+    columns:                     2;
+    lines:                       8;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -107,8 +99,8 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
-    spacing:                     10px;
+
+    spacing:                     5px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -130,32 +122,23 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     8px;
+    padding:                     5px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               12px;
     border-color:                @selected;
-    background-color:            @background;
+    background-color:            transparent;
     text-color:                  @foreground;
-    orientation:                 horizontal;
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-}
-element alternate.normal {
-    background-color:            @background-alt;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 element selected.normal {
-    border:                      0px 2px 0px 2px;
-    border-radius:               10px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @selected;
+    background-color:            @selected;
+    text-color:                  @background;
 }
 element-icon {
-    padding:                     0px;
     background-color:            transparent;
     text-color:                  inherit;
     size:                        32px;
@@ -172,9 +155,9 @@ element-text {
 
 /*****----- Message -----*****/
 error-message {
-    padding:                     20px;
-    border:                      0px solid;
-    border-radius:               0px;
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               12px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  @foreground;
