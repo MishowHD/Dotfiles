@@ -32,7 +32,6 @@
   "widgets": [
     "title",
     "dnd",
-    "buttons-grid",
     "mpris",
     "notifications"
   ],
@@ -49,30 +48,6 @@
     "mpris": {
       "image-size": 110,
       "image-radius": 16
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "󰕾",
-          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        },
-        {
-          "label": "",
-          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        },
-        {
-          "label": "󰖩",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
-        },
-        {
-          "label": "󰏘",
-          "command": "nwg-look"
-        }
-      ]
     }
   }
 }

@@ -36,6 +36,9 @@
 @define-color bluetooth-color @cyan;
 @define-color bluetooth-connected-color @blue;
 @define-color bluetooth-disabled-color @red;
+@define-color swaync-color @green;
+@define-color swaync-notification-color @yellow;
+@define-color swaync-dnd-color @red;
 
 * {
     border: none;
@@ -52,7 +55,7 @@ window#waybar {
 
 /* Common module styling */
 #custom-playerctl, #clock, #pulseaudio, #network, #bluetooth,
-#cpu, #memory, #temperature, #battery, #custom-updates, #tray {
+#cpu, #memory, #temperature, #battery, #custom-updates, #custom-swaync, #tray {
     padding: 0 10px;
     margin: 0 2px;
     border-bottom: 2px solid transparent;
@@ -192,6 +195,23 @@ window#waybar {
 #custom-updates {
     color: @updates-color;
     border-bottom-color: @updates-color;
+}
+
+/* Swaync */
+#custom-swaync {
+    color: @swaync-color;
+    border-bottom-color: @swaync-color;
+}
+
+#custom-swaync.notification {
+    color: @swaync-notification-color;
+    border-bottom-color: @swaync-notification-color;
+}
+
+#custom-swaync.dnd-notification,
+#custom-swaync.dnd-none {
+    color: @swaync-dnd-color;
+    border-bottom-color: @swaync-dnd-color;
 }
 
 /* Tray */
