@@ -32,7 +32,6 @@
 @define-color network-disconnected-color @red;
 @define-color pulseaudio-color @orange;
 @define-color pulseaudio-muted-color @red;
-@define-color updates-color @orange;
 @define-color bluetooth-color @cyan;
 @define-color bluetooth-connected-color @blue;
 @define-color bluetooth-disabled-color @red;
@@ -55,7 +54,7 @@ window#waybar {
 
 /* Common module styling */
 #custom-playerctl, #clock, #pulseaudio, #network, #bluetooth,
-#cpu, #memory, #temperature, #battery, #custom-updates, #custom-swaync, #tray {
+#cpu, #memory, #temperature, #battery, #custom-swaync, #tray {
     padding: 0 10px;
     margin: 0 2px;
     border-bottom: 2px solid transparent;
@@ -189,12 +188,6 @@ window#waybar {
 #battery.critical:not(.charging) {
     color: @battery-critical-color;
     border-bottom-color: @battery-critical-color;
-}
-
-/* Updates */
-#custom-updates {
-    color: @updates-color;
-    border-bottom-color: @updates-color;
 }
 
 /* Swaync */

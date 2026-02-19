@@ -9,17 +9,16 @@
     ],
     "modules-center": [], //battery   //disk     // uptime      //updates        // systray
     "modules-right": [
-        "tray",
         "custom/playerctl",
-        "clock",
-        "pulseaudio",
-        "network",
-        "bluetooth",
+        "tray",
         "cpu",
         "memory",
         "temperature",
         "battery",
-        "custom/updates",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "clock",
         "custom/swaync"
     ],
     "hyprland/workspaces": {
@@ -73,13 +72,6 @@
         "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl next"
-    },
-    "custom/updates": {
-        "format": "󰚰 {}",
-        "exec": "checkupdates | wc -l",
-        "interval": 3600,
-        "on-click": "ghostty -e yay",
-        "signal": 8
     },
     "clock": {
         "format": "󰥔 {:%H:%M}",
