@@ -4,8 +4,6 @@ This repository contains my **personal Linux dotfiles**, managed using **GNU Sto
 
 The focus is on simplicity, transparency, and version control of configuration files.
 
----
-
 ## Overview
 
 Dotfiles are configuration files used by the shell, desktop environment, and various CLI/TUI applications. By tracking them in a Git repository and managing symlinks with **stow**, it becomes easy to:
@@ -13,8 +11,6 @@ Dotfiles are configuration files used by the shell, desktop environment, and var
 * keep configurations consistent across systems;
 * bootstrap a new machine quickly;
 * roll back changes safely using Git.
-
----
 
 ## Repository Structure
 
@@ -36,15 +32,12 @@ Example structure:
 * Each package directory mirrors the target filesystem structure.
 * Files are symlinked into the home directory using `stow`.
 
----
-
 ## Requirements
 
 * `git`
 * `stow`
 * Applications corresponding to the provided configuration files (e.g. `zsh`, window manager, CLI tools)
 
----
 
 ## Installation
 
@@ -65,21 +58,15 @@ This will create the appropriate symbolic links in `$HOME`.
 
 > **Important**: Back up any existing configuration files before running `stow`, as conflicts may occur.
 
----
-
 ## Usage
 
 * Modify configuration files directly inside the repository.
 * Apply changes immediately (or reload the affected application).
 * Commit changes to keep a full history of configuration updates.
 
----
-
 ## Notes
 
 * The repository reflects my personal workflow and preferences; adapt as needed.
-
----
 
 ## License
 
