@@ -28,8 +28,7 @@
 @define-color battery-charging-color @green;
 @define-color battery-warning-color @yellow;
 @define-color battery-critical-color @red;
-@define-color network-color @blue;
-@define-color network-disconnected-color @red;
+@define-color tray-color @blue;
 @define-color pulseaudio-color @orange;
 @define-color pulseaudio-muted-color @red;
 @define-color bluetooth-color @cyan;
@@ -53,15 +52,15 @@ window#waybar {
 }
 
 /* Common module styling */
-#custom-playerctl, #clock, #pulseaudio, #network, #bluetooth,
-#cpu, #memory, #temperature, #battery, #custom-swaync, #tray {
+#custom-playerctl, #clock, #pulseaudio, #tray, #bluetooth,
+#cpu, #memory, #temperature, #battery, #custom-swaync {
     padding: 0 10px;
     margin: 0 2px;
     border-bottom: 2px solid transparent;
     background-color: transparent;
 }
 
-/* Workspaces */
+/* ─── Workspaces ─────────────────────────────────────────────── */
 #workspaces button {
     padding: 0 10px;
     background-color: transparent;
@@ -74,12 +73,7 @@ window#waybar {
     box-shadow: inherit;
 }
 
-#workspaces button.focused {
-    box-shadow: inset 0 -2px @workspaces-focused-fg;
-    color: @workspaces-focused-fg;
-    font-weight: 900;
-}
-
+#workspaces button.focused,
 #workspaces button.active {
     box-shadow: inset 0 -2px @workspaces-focused-fg;
     color: @workspaces-focused-fg;
@@ -91,7 +85,7 @@ window#waybar {
     color: @workspaces-urgent-fg;
 }
 
-/* Playerctl */
+/* ─── Playerctl (center) ─────────────────────────────────────── */
 #custom-playerctl {
     color: @playerctl-color;
     border-bottom-color: @playerctl-color;
@@ -107,13 +101,13 @@ window#waybar {
     border-bottom-color: @orange;
 }
 
-/* Clock */
+/* ─── Clock ──────────────────────────────────────────────────── */
 #clock {
     color: @clock-color;
     border-bottom-color: @clock-color;
 }
 
-/* Pulseaudio */
+/* ─── Pulseaudio ─────────────────────────────────────────────── */
 #pulseaudio {
     color: @pulseaudio-color;
     border-bottom-color: @pulseaudio-color;
@@ -124,18 +118,7 @@ window#waybar {
     border-bottom-color: @pulseaudio-muted-color;
 }
 
-/* Network */
-#network {
-    color: @network-color;
-    border-bottom-color: @network-color;
-}
-
-#network.disconnected {
-    color: @network-disconnected-color;
-    border-bottom-color: @network-disconnected-color;
-}
-
-/* Bluetooth */
+/* ─── Bluetooth ──────────────────────────────────────────────── */
 #bluetooth {
     color: @bluetooth-color;
     border-bottom-color: @bluetooth-color;
@@ -151,19 +134,19 @@ window#waybar {
     border-bottom-color: @bluetooth-disabled-color;
 }
 
-/* CPU */
+/* ─── CPU ────────────────────────────────────────────────────── */
 #cpu {
     color: @cpu-color;
     border-bottom-color: @cpu-color;
 }
 
-/* Memory */
+/* ─── Memory ─────────────────────────────────────────────────── */
 #memory {
     color: @memory-color;
     border-bottom-color: @memory-color;
 }
 
-/* Temperature */
+/* ─── Temperature ────────────────────────────────────────────── */
 #temperature {
     color: @temperature-color;
     border-bottom-color: @temperature-color;
@@ -174,7 +157,7 @@ window#waybar {
     border-bottom-color: @temperature-critical-color;
 }
 
-/* Battery */
+/* ─── Battery ────────────────────────────────────────────────── */
 #battery {
     color: @battery-color;
     border-bottom-color: @battery-color;
@@ -196,7 +179,22 @@ window#waybar {
     border-bottom-color: @battery-critical-color;
 }
 
-/* Swaync */
+/* ─── Tray ───────────────────────────────────────────────────── */
+#tray {
+    border-bottom-color: @tray-color;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @red;
+    border-bottom-color: @red;
+}
+
+/* ─── Swaync ─────────────────────────────────────────────────── */
 #custom-swaync {
     color: @swaync-color;
     border-bottom-color: @swaync-color;
@@ -211,21 +209,4 @@ window#waybar {
 #custom-swaync.dnd-none {
     color: @swaync-dnd-color;
     border-bottom-color: @swaync-dnd-color;
-}
-
-/* Tray */
-#tray {
-    background-color: transparent;
-    padding: 0 10px;
-    margin: 0 2px;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    color: @red;
-    border-bottom-color: @red;
 }
