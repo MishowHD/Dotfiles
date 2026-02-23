@@ -21,21 +21,13 @@
 @define-color hover          alpha(@accent, 0.3);
 @define-color urgent         @red;
 
-/* ============================================================================
-   BASE STYLES
-   ============================================================================ */
-
 * {
   all: unset;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 15px;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
   color: @text;
   transition: all 200ms ease;
 }
-
-/* ============================================================================
-   FLOATING NOTIFICATIONS
-   ============================================================================ */
 
 .floating-notifications.background .notification-row {
   margin: 12px;
@@ -81,7 +73,6 @@
   border-radius: 8px;
 }
 
-/* Notification Actions */
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
   background: @surface;
   border: 1px solid @overlay;
@@ -101,7 +92,6 @@
   color: @background;
 }
 
-/* Close Button */
 .floating-notifications.background .notification-row .notification-background .close-button {
   background: transparent;
   border-radius: 8px;
@@ -115,7 +105,6 @@
   color: @background;
 }
 
-/* Progress Bar */
 .notification progress,
 .notification progressbar {
   border-radius: 8px;
@@ -130,10 +119,6 @@
   background-color: @accent;
 }
 
-/* ============================================================================
-   CONTROL CENTER
-   ============================================================================ */
-
 .blank-window {
   background: transparent;
 }
@@ -142,12 +127,11 @@
   background: alpha(@background, 0.95);
   border: 2px solid @accent;
   border-radius: 20px;
-  margin: 12px;
+  margin: 0;
   padding: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* Control Center Notifications */
 .control-center .notification-row {
   margin: 6px 0;
 }
@@ -179,7 +163,6 @@
   color: @subtext;
 }
 
-/* Control Center Actions */
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
   background: alpha(@accent, 0.2);
   border-radius: 8px;
@@ -192,7 +175,6 @@
   color: @background;
 }
 
-/* Control Center Close Button */
 .control-center .notification-row .notification-background .close-button {
   background: transparent;
   border-radius: 6px;
@@ -205,7 +187,6 @@
   color: @background;
 }
 
-/* Notification Groups */
 .notification-group {
   margin: 8px;
 }
@@ -230,7 +211,6 @@
   background: @hover;
 }
 
-/* Progress Bars */
 progressbar,
 progress,
 trough {
@@ -241,11 +221,6 @@ progressbar {
   background-color: @overlay;
 }
 
-/* ============================================================================
-   WIDGETS
-   ============================================================================ */
-
-/* Title Widget */
 .widget-title {
   font-size: 18px;
   font-weight: bold;
@@ -269,7 +244,6 @@ progressbar {
   color: @background;
 }
 
-/* Do Not Disturb Widget */
 .widget-dnd {
   margin: 8px;
   padding: 8px;
@@ -300,7 +274,6 @@ progressbar {
   min-height: 20px;
 }
 
-/* Buttons Grid Widget */
 .widget-buttons-grid {
   background: @surface;
   border-radius: 12px;
@@ -325,7 +298,6 @@ progressbar {
   color: @background;
 }
 
-/* MPRIS Widget */
 .widget-mpris {
   background: @surface;
   border-radius: 16px;
@@ -373,7 +345,6 @@ progressbar {
   color: @background;
 }
 
-/* Hide MPRIS background image blur effect */
 picture.mpris-background {
   opacity: 0;
 }
