@@ -11,7 +11,7 @@ confirm-close-surface = false
 resize-overlay = never
 
 # --- APPEARANCE ---
-background-opacity = 0.9
+background-opacity = 0.85
 
 # --- THEME ---
 config-file = /home/mishow/.cache/wal/ghostty.conf
