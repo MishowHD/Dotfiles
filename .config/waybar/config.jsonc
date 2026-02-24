@@ -7,10 +7,9 @@
     "modules-left": [
         "hyprland/workspaces"
     ],
-    "modules-center": [
-        "custom/playerctl"
-    ],
+    "modules-center": [],
     "modules-right": [
+        "custom/playerctl",
         "cpu",
         "memory",
         "temperature",
