@@ -9,11 +9,16 @@ if [[ -n "$1" ]]; then
 else
   WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) |
     sort |
+    while IFS= read -r file; do
+      echo "$file"$'\t'"$(basename "$file")"
+    done |
     rofi -dmenu \
       -p " Wallpaper" \
       -i \
       -theme ~/.config/rofi/launchers/type-2/style-menu.rasi \
-      -format 's')
+      -display-columns 2 \
+      -format 's' |
+    cut -f1)
 fi
 
 [[ -z "$WALLPAPER" ]] && {
