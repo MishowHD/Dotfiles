@@ -32,20 +32,18 @@ fi
 
 echo "→ Wallpaper: $WALLPAPER"
 
-# ── Imposta sfondo con swww ───────────────────────────────────────────────────
+# ── swww ───────────────────────────────────────────────────
 
 swww img "$WALLPAPER" \
-  --transition-type fade \
-  --transition-duration 1.5 \
-  --transition-fps 60
+  --transition-type fade
 
-# ── Genera colori con pywal ───────────────────────────────────────────────────
+# ── pywal ───────────────────────────────────────────────────
 
-wal -i "$WALLPAPER" -q #  -q = silenzioso
+wal -i "$WALLPAPER" -q
 
 echo "→ Generated colors"
 
-# ── Ricarica swaync ───────────────────────────────────────────────────────────
+# ── swaync ───────────────────────────────────────────────────────────
 
 pkill swaync 2>/dev/null
 swaync &
