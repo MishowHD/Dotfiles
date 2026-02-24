@@ -1,9 +1,9 @@
 return {
-  { "uZer/pywal16.nvim" },
+  { "rebelot/kanagawa.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "pywal16",
+      colorscheme = "kanagawa",
     },
   },
 }
