@@ -46,6 +46,7 @@ echo "→ Generated colors"
 # ── swaync ───────────────────────────────────────────────────────────
 
 pkill swaync 2>/dev/null
+sleep 0.5
 swaync &
 echo "→ Swaync reloaded"
 
