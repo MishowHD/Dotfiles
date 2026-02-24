@@ -1,9 +1,9 @@
 return {
-  { "catppuccin/nvim" },
+  { "uZer/pywal16.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "pywal16",
     },
   },
 }
