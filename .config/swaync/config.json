@@ -5,17 +5,17 @@
   "positionY": "top",
   "cssPriority": "user",
 
-  "control-center-width": 420,
-  "control-center-height": 800,
+  "control-center-width": 360,
+  "control-center-height": 680,
   "control-center-margin-top": 8,
   "control-center-margin-bottom": 8,
   "control-center-margin-right": 8,
   "control-center-margin-left": 0,
 
-  "notification-window-width": 420,
-  "notification-icon-size": 64,
-  "notification-body-image-height": 180,
-  "notification-body-image-width": 220,
+  "notification-window-width": 360,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 140,
+  "notification-body-image-width": 180,
 
   "timeout": 5,
   "timeout-low": 3,
@@ -46,8 +46,8 @@
       "text": "Do Not Disturb"
     },
     "mpris": {
-      "image-size": 110,
-      "image-radius": 16
+      "image-size": 80,
+      "image-radius": 0
     }
   }
 }
