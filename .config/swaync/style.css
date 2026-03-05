@@ -241,7 +241,7 @@ progressbar {
 
 .widget-dnd > switch {
   background: @surface;
-  border-radius: 0;
+  border-radius: 999px;
   padding: 3px;
   min-width: 44px;
   min-height: 22px;
@@ -257,7 +257,7 @@ progressbar {
 
 .widget-dnd > switch slider {
   background: @text;
-  border-radius: 0;
+  border-radius: 50%;
   min-width: 16px;
   min-height: 16px;
 }
