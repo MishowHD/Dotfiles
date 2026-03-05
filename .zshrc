@@ -30,6 +30,7 @@ setopt appendhistory
 # -----------------------------------------------------
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+(cat ~/.cache/wal/sequences &)
 
 # -----------------------------------------------------
 # ALIASES
