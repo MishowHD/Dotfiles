@@ -1,0 +1,27 @@
+
+# ─────────────────────────────────────────────────────────────────────────────
+# <type>(<scope>)!: <description>          max 72 chars, ideally ≤50
+# ─────────────────────────────────────────────────────────────────────────────
+#
+#   feat      new feature                            → MINOR bump
+#   fix       bug fix                                → PATCH bump
+#   perf      performance improvement
+#   refactor  restructure, no behavior change
+#   style     formatting only, no logic change
+#   test      add or fix tests
+#   docs      documentation only
+#   build     build system / dependencies
+#   ci        CI/CD configuration
+#   chore     housekeeping / misc
+#   revert    revert a previous commit
+#
+# ─────────────────────────────────────────────────────────────────────────────
+#
+#   scope     optional area: (auth) (api) (ui) (db) — project-specific
+#   !         breaking change → MAJOR bump
+#
+#   subject   imperative mood · no capital · no trailing period
+#   body      explain WHY, not what · wrap at 72 chars (leave blank line above)
+#   footer    BREAKING CHANGE: … · Closes #id · Signed-off-by: Name <email>
+#
+# ─────────────────────────────────────────────────────────────────────────────
