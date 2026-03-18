@@ -68,6 +68,5 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'   # regenerate gru
 # Prompt & Tools
 # -----------------------------------------------------------------------------
 
-(cat ~/.cache/wal/sequences &)      # apply pywal colorscheme to terminal
 eval "$(starship init zsh)"         # starship prompt
 eval "$(zoxide init --cmd cd zsh)"  # zoxide as a drop-in cd replacement
