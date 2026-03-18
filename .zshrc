@@ -47,10 +47,3 @@ alias cat='bat --style=plain'
 # System
 # -----------------------------------------------------
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
-# -----------------------------------------------------
-# AUTOSTART
-# -----------------------------------------------------
-if [[ $(tty) == *"pts"* ]]; then
-    fastfetch
-fi
