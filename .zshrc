@@ -38,7 +38,6 @@ bindkey '^[[B' history-search-forward   # Down arrow: search history by current 
 # Plugins
 # -----------------------------------------------------------------------------
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh          # fish-like suggestions from history
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # command syntax highlighting
 
 # -----------------------------------------------------------------------------
