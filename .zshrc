@@ -58,6 +58,7 @@ export PATH="$HOME/.local/bin:$PATH"                # include user-local binarie
 alias c='clear'                                                  # quick clear
 alias ff='fastfetch'                                             # system info (run manually)
 alias l='eza --icons=always'                                     # modern ls replacement with icons
+alias ls='eza --icons=always'                                    # modern ls replacement with icons
 alias la='eza -al --icons=always'                                # long listing with hidden files
 alias ll='eza -l --icons=always'                                 # long listing without hidden files
 alias lt='eza -a --tree --level=2 --icons=always'                # show files in tree format
