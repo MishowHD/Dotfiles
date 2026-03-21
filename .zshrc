@@ -161,8 +161,7 @@ NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{0}%F{15} %D{%_I:%M%P} %K{8}%F{15} %n %K{7}%F{0} %~ %f%k\${vcs_info_msg_0_} ❯ "
 
 # Welcome line — printed once at startup: time, uptime, kernel version
-echo -e "${NEWLINE}\e[34m it's $(print -P '%D{%_I:%M%P}') \e[32m $(uptime -p | cut -c 4-) \e[33m $(uname -r) \e[0m"
-
+echo -e "${NEWLINE}\e[34m it's $(print -P '%D{%A, %B %d}') \e[32m $(uptime -p | cut -c 4-) \e[33m $(uname -r) \e[0m"
 
 # =============================================================================
 #  Tools
