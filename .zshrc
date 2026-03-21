@@ -141,10 +141,10 @@ setopt PROMPT_SUBST
 
 zstyle ':vcs_info:*'     enable git
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' unstagedstr   ' %F{3}!%f'   # unstaged changes
-zstyle ':vcs_info:git:*' stagedstr     ' %F{2}+%f'   # staged changes
-zstyle ':vcs_info:git:*' formats       ' %F{4} %b%u%c%f'
-zstyle ':vcs_info:git:*' actionformats ' %F{4} %b %F{1}(%a)%u%c%f'
+zstyle ':vcs_info:git:*' unstagedstr ' %F{3}!%f'
+zstyle ':vcs_info:git:*' stagedstr   ' %F{2}+%f'
+zstyle ':vcs_info:git:*' formats       ' %F{4} %b%u%c'
+zstyle ':vcs_info:git:*' actionformats ' %F{4} %b %F{1}(%a)%u%c'
 
 add-zsh-hook precmd vcs_info
 
