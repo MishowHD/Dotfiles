@@ -59,26 +59,24 @@ stty stop undef              # prevent Ctrl+S from freezing the terminal
 
 # =============================================================================
 #  Keybindings
-#
 # =============================================================================
 
 bindkey -e
 
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey '^[[A' up-line-or-beginning-search
-bindkey '^[[B' down-line-or-beginning-search
-
 
 # =============================================================================
 #  fzf
-#  Ctrl+R  interactive history search
+#
+#  source <(fzf --zsh) automatically binds:
+#    Ctrl+R  interactive history search
+#    Ctrl+T  fuzzy file picker
+#    Alt+C   fuzzy cd
+#
+#  --color 16 uses the terminal's own palette
 # =============================================================================
 
 if command -v fzf &>/dev/null; then
   source <(fzf --zsh)
-  bindkey '^R' fzf-history-widget
 
   export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 40%"
   export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
@@ -137,16 +135,14 @@ alias k='kubectl'
 
 # =============================================================================
 #  Git prompt (vcs_info)
-#  check-for-changes enables the %u (unstaged ●) and %c (staged ✚) markers
-#  by running 'git status' on every prompt
 # =============================================================================
 
 setopt PROMPT_SUBST
 
 zstyle ':vcs_info:*'     enable git
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' unstagedstr   ' %F{3}●%f'
-zstyle ':vcs_info:git:*' stagedstr     ' %F{2}✚%f'
+zstyle ':vcs_info:git:*' unstagedstr   ' %F{3}!%f'   # unstaged changes
+zstyle ':vcs_info:git:*' stagedstr     ' %F{2}+%f'   # staged changes
 zstyle ':vcs_info:git:*' formats       ' %F{4} %b%u%c%f'
 zstyle ':vcs_info:git:*' actionformats ' %F{4} %b %F{1}(%a)%u%c%f'
 
@@ -160,8 +156,9 @@ add-zsh-hook precmd vcs_info
 NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{0}%F{15} %D{%_I:%M%P} %K{8}%F{15} %n %K{7}%F{0} %~ %f%k\${vcs_info_msg_0_} ❯ "
 
-# Welcome line — printed once at startup: time, uptime, kernel version
+# Welcome line — printed once at startup: date, uptime, kernel version
 echo -e "${NEWLINE}\e[34m it's $(print -P '%D{%A, %B %d}') \e[32m $(uptime -p | cut -c 4-) \e[33m $(uname -r) \e[0m"
+
 
 # =============================================================================
 #  Tools
