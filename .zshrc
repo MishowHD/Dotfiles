@@ -12,7 +12,7 @@ zmodload zsh/complist
 autoload -Uz compinit && compinit
 autoload -U  colors   && colors
 autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
+autoload -Uz add-zsh-hook  # appends to hook arrays instead of overwriting them
 
 
 # =============================================================================
@@ -26,8 +26,8 @@ SAVEHIST=10000
 setopt append_history      # append to $HISTFILE on exit, never overwrite
 setopt inc_append_history  # write each command immediately (survives crashes)
 setopt share_history       # share history in real time across all open shells
-setopt hist_ignore_dups    # do not record a command already in the previous entry
-setopt hist_ignore_space   # do not record commands prefixed with a space
+setopt hist_ignore_dups    # skip consecutive duplicate entries
+setopt hist_ignore_space   # skip commands prefixed with a space
 setopt hist_find_no_dups   # skip duplicates when navigating history
 
 
@@ -59,35 +59,30 @@ stty stop undef              # prevent Ctrl+S from freezing the terminal
 
 # =============================================================================
 #  Keybindings
+#
 # =============================================================================
 
-# Emacs keymap provides Ctrl+A/E/W/U/L out of the box
 bindkey -e
 
-# Up/Down: prefix-aware history search instead of plain recall
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
-bindkey '^R' fzf-history-widget
-
 
 # =============================================================================
 #  fzf
-#
 #  Ctrl+R  interactive history search
-#  Ctrl+T  fuzzy file picker
-#  Alt+C   fuzzy cd
-#
-#  --color 16 uses the terminal's own palette, follows the Ghostty theme
 # =============================================================================
 
-command -v fzf &>/dev/null && source <(fzf --zsh)
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh)
+  bindkey '^R' fzf-history-widget
 
-export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 40%"
-export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
+  export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 40%"
+  export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
+fi
 
 
 # =============================================================================
@@ -142,6 +137,8 @@ alias k='kubectl'
 
 # =============================================================================
 #  Git prompt (vcs_info)
+#  check-for-changes enables the %u (unstaged ●) and %c (staged ✚) markers
+#  by running 'git status' on every prompt
 # =============================================================================
 
 setopt PROMPT_SUBST
@@ -153,7 +150,6 @@ zstyle ':vcs_info:git:*' stagedstr     ' %F{2}✚%f'
 zstyle ':vcs_info:git:*' formats       ' %F{4} %b%u%c%f'
 zstyle ':vcs_info:git:*' actionformats ' %F{4} %b %F{1}(%a)%u%c%f'
 
-# add-zsh-hook appends to the hook array instead of overwriting precmd()
 add-zsh-hook precmd vcs_info
 
 
@@ -161,18 +157,10 @@ add-zsh-hook precmd vcs_info
 #  Prompt
 # =============================================================================
 
-# ANSI palette slots 0–15 — recolor automatically with the Ghostty theme:
-#   %K{0}/%K{8}/%K{7}  dark → mid → light background blocks
-#   %F{15}/%F{0}        bright/dark foreground for contrast
-#
-# %D{%_I:%M%P}        native zsh strftime, no subprocess fork
-# \${vcs_info_msg_0_}  escaped so it expands at redraw, not at assignment
-
 NEWLINE=$'\n'
 PROMPT="${NEWLINE}%K{0}%F{15} %D{%_I:%M%P} %K{8}%F{15} %n %K{7}%F{0} %~ %f%k\${vcs_info_msg_0_} ❯ "
 
-# Welcome line — printed once at startup
-# ANSI base codes (palette-aware): 34=blue 32=green 33=yellow
+# Welcome line — printed once at startup: time, uptime, kernel version
 echo -e "${NEWLINE}\e[34m it's $(print -P '%D{%_I:%M%P}') \e[32m $(uptime -p | cut -c 4-) \e[33m $(uname -r) \e[0m"
 
 
