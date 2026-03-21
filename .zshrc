@@ -11,8 +11,6 @@
 zmodload zsh/complist
 autoload -Uz compinit && compinit
 autoload -U  colors   && colors
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook  # appends to hook arrays instead of overwriting them
 
 
 # =============================================================================
@@ -134,27 +132,11 @@ alias k='kubectl'
 
 
 # =============================================================================
-#  Git prompt (vcs_info)
-# =============================================================================
-
-setopt PROMPT_SUBST
-
-zstyle ':vcs_info:*'     enable git
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' unstagedstr ' %F{3}!%f'
-zstyle ':vcs_info:git:*' stagedstr   ' %F{2}+%f'
-zstyle ':vcs_info:git:*' formats       ' %F{4} %b%u%c'
-zstyle ':vcs_info:git:*' actionformats ' %F{4} %b %F{1}(%a)%u%c'
-
-add-zsh-hook precmd vcs_info
-
-
-# =============================================================================
 #  Prompt
 # =============================================================================
 
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{0}%F{15} %D{%_I:%M%P} %K{8}%F{15} %n %K{7}%F{0} %~ %f%k\${vcs_info_msg_0_} ❯ "
+PROMPT="${NEWLINE}%K{0}%F{15} %D{%_I:%M%P} %K{8}%F{15} %n %K{7}%F{0} %~ %f%k ❯ "
 
 # Welcome line — printed once at startup: date, uptime, kernel version
 echo -e "${NEWLINE}\e[34m it's $(print -P '%D{%A, %B %d}') \e[32m $(uptime -p | cut -c 4-) \e[33m $(uname -r) \e[0m"
