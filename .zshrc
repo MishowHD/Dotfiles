@@ -132,14 +132,12 @@ alias k='kubectl'
 
 
 # =============================================================================
-#  Prompt
+#  Prompt & Welcome
 # =============================================================================
 
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{0}%F{15} %D{%_I:%M%P} %K{8}%F{15} %n %K{7}%F{0} %~ %f%k ❯ "
-
-# Welcome line — printed once at startup: date, uptime, kernel version
-echo -e "${NEWLINE}\e[34m it's $(print -P '%D{%A, %B %d}') \e[32m $(uptime -p | cut -c 4-) \e[33m $(uname -r) \e[0m"
+PROMPT="${NEWLINE}%K{4}%F{0} %D{%_I:%M%P} %K{5}%F{0} %n %K{6}%F{0} %~ %f%k ❯ "
+print -P "${NEWLINE}%F{4} it's %D{%A, %B %d} %F{2} $(uptime -p | cut -c 4-) %F{3} $(uname -r) %f"
 
 
 # =============================================================================
