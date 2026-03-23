@@ -1,41 +1,68 @@
 @import "/home/mishow/.cache/wal/colors-waybar.css";
 
-@define-color background-light @color0;
-@define-color red     #f38ba8;
-@define-color green   #a6e3a1;
-@define-color yellow  #f9e2af;
-@define-color blue    #89b4fa;
-@define-color magenta #cba6f7;
-@define-color cyan    #89dceb;
-@define-color white   #cdd6f4;
-@define-color orange  #fab387;
+/* ─── Semantic color mapping from pywal palette ──────────────────
+   color0  = darkest bg shade
+   color1  = red/danger
+   color2  = green/ok
+   color3  = yellow/warning
+   color4  = blue/accent
+   color5  = magenta/purple
+   color6  = cyan/teal
+   color7  = light fg
+   color8  = dimmed/disabled
+   color9-15 = brighter variants
+   ──────────────────────────────────────────────────────────────── */
+@define-color bg-alt         @color0;
+@define-color red            @color1;
+@define-color green          @color2;
+@define-color yellow         @color3;
+@define-color blue           @color4;
+@define-color magenta        @color5;
+@define-color cyan           @color6;
+@define-color dim            @color8;
+@define-color bright-red     @color9;
+@define-color bright-green   @color10;
+@define-color bright-yellow  @color11;
+@define-color bright-blue    @color12;
+@define-color bright-magenta @color13;
+@define-color bright-cyan    @color14;
 
-/* Module-specific colors */
-@define-color workspaces-color @foreground;
-@define-color workspaces-focused-fg @cyan;
-@define-color workspaces-urgent-bg @red;
-@define-color workspaces-urgent-fg @black;
-
-@define-color playerctl-color @magenta;
-@define-color clock-color @blue;
-@define-color cpu-color @green;
-@define-color memory-color @magenta;
-@define-color temperature-color @yellow;
-@define-color temperature-critical-color @red;
-@define-color battery-color @cyan;
-@define-color battery-charging-color @green;
-@define-color battery-warning-color @yellow;
+/* ─── Module color assignments ───────────────────────────────────
+   Ogni modulo ha un colore distinto. La logica:
+   clock        → bright-blue    (neutro, informativo)
+   cpu          → bright-green   (verde = tutto ok, usage bassa)
+   memory       → bright-magenta (viola, distinto da cpu)
+   temperature  → bright-yellow  (calore → giallo)
+   battery      → bright-cyan    (energia → cyan)
+   pulseaudio   → yellow         (arancio/giallo, audio caldo)
+   bluetooth    → blue           (blu base, distinto da clock bright-blue)
+   tray         → dim            (sottile, è solo un contenitore)
+   swaync       → green          (verde base, distinto da cpu bright-green)
+   ──────────────────────────────────────────────────────────────── */
+@define-color clock-color            @bright-blue;
+@define-color cpu-color              @bright-green;
+@define-color memory-color           @bright-magenta;
+@define-color temperature-color      @bright-yellow;
+@define-color temperature-crit-color @bright-red;
+@define-color battery-color          @bright-cyan;
+@define-color battery-charging-color @bright-green;
+@define-color battery-warning-color  @yellow;
 @define-color battery-critical-color @red;
-@define-color tray-color @blue;
-@define-color pulseaudio-color @orange;
+@define-color pulseaudio-color       @yellow;
 @define-color pulseaudio-muted-color @red;
-@define-color bluetooth-color @cyan;
-@define-color bluetooth-connected-color @blue;
-@define-color bluetooth-disabled-color @red;
-@define-color swaync-color @green;
-@define-color swaync-notification-color @yellow;
-@define-color swaync-dnd-color @red;
+@define-color bluetooth-color        @blue;
+@define-color bluetooth-conn-color   @cyan;
+@define-color bluetooth-off-color    @dim;
+@define-color tray-color             @dim;
+@define-color swaync-color           @green;
+@define-color swaync-notif-color     @bright-yellow;
+@define-color swaync-dnd-color       @red;
 
+@define-color workspaces-fg          @foreground;
+@define-color workspaces-focused-fg  @bright-cyan;
+@define-color workspaces-urgent-bg   @red;
+
+/* ─── Base ───────────────────────────────────────────────────── */
 * {
     border: none;
     border-radius: 0;
@@ -49,9 +76,9 @@ window#waybar {
     color: @foreground;
 }
 
-/* Common module styling */
-#custom-playerctl, #clock, #pulseaudio, #tray, #bluetooth,
-#cpu, #memory, #temperature, #battery, #custom-swaync {
+/* ─── Common module styling ──────────────────────────────────── */
+#clock, #cpu, #memory, #temperature, #battery,
+#bluetooth, #pulseaudio, #tray, #custom-swaync {
     padding: 0 10px;
     margin: 0 2px;
     border-bottom: 2px solid transparent;
@@ -62,12 +89,12 @@ window#waybar {
 #workspaces button {
     padding: 0 10px;
     background-color: transparent;
-    color: @workspaces-color;
+    color: @workspaces-fg;
     margin: 0;
 }
 
 #workspaces button:hover {
-    background: @background-light;
+    background: @bg-alt;
     box-shadow: inherit;
 }
 
@@ -80,56 +107,15 @@ window#waybar {
 
 #workspaces button.urgent {
     background-color: @workspaces-urgent-bg;
-    color: @workspaces-urgent-fg;
-}
-
-/* ─── Playerctl (center) ─────────────────────────────────────── */
-#custom-playerctl {
-    color: @playerctl-color;
-    border-bottom-color: @playerctl-color;
-}
-
-#custom-playerctl.Playing {
-    color: @cyan;
-    border-bottom-color: @cyan;
-}
-
-#custom-playerctl.Paused {
-    color: @orange;
-    border-bottom-color: @orange;
+    color: @background;
 }
 
 /* ─── Clock ──────────────────────────────────────────────────── */
 #clock {
     color: @clock-color;
     border-bottom-color: @clock-color;
-}
-
-/* ─── Pulseaudio ─────────────────────────────────────────────── */
-#pulseaudio {
-    color: @pulseaudio-color;
-    border-bottom-color: @pulseaudio-color;
-}
-
-#pulseaudio.muted {
-    color: @pulseaudio-muted-color;
-    border-bottom-color: @pulseaudio-muted-color;
-}
-
-/* ─── Bluetooth ──────────────────────────────────────────────── */
-#bluetooth {
-    color: @bluetooth-color;
-    border-bottom-color: @bluetooth-color;
-}
-
-#bluetooth.connected {
-    color: @bluetooth-connected-color;
-    border-bottom-color: @bluetooth-connected-color;
-}
-
-#bluetooth.disabled {
-    color: @bluetooth-disabled-color;
-    border-bottom-color: @bluetooth-disabled-color;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /* ─── CPU ────────────────────────────────────────────────────── */
@@ -151,8 +137,8 @@ window#waybar {
 }
 
 #temperature.critical {
-    color: @temperature-critical-color;
-    border-bottom-color: @temperature-critical-color;
+    color: @temperature-crit-color;
+    border-bottom-color: @temperature-crit-color;
 }
 
 /* ─── Battery ────────────────────────────────────────────────── */
@@ -177,6 +163,33 @@ window#waybar {
     border-bottom-color: @battery-critical-color;
 }
 
+/* ─── Pulseaudio ─────────────────────────────────────────────── */
+#pulseaudio {
+    color: @pulseaudio-color;
+    border-bottom-color: @pulseaudio-color;
+}
+
+#pulseaudio.muted {
+    color: @pulseaudio-muted-color;
+    border-bottom-color: @pulseaudio-muted-color;
+}
+
+/* ─── Bluetooth ──────────────────────────────────────────────── */
+#bluetooth {
+    color: @bluetooth-color;
+    border-bottom-color: @bluetooth-color;
+}
+
+#bluetooth.connected {
+    color: @bluetooth-conn-color;
+    border-bottom-color: @bluetooth-conn-color;
+}
+
+#bluetooth.disabled {
+    color: @bluetooth-off-color;
+    border-bottom-color: transparent;
+}
+
 /* ─── Tray ───────────────────────────────────────────────────── */
 #tray {
     border-bottom-color: @tray-color;
@@ -199,8 +212,8 @@ window#waybar {
 }
 
 #custom-swaync.notification {
-    color: @swaync-notification-color;
-    border-bottom-color: @swaync-notification-color;
+    color: @swaync-notif-color;
+    border-bottom-color: @swaync-notif-color;
 }
 
 #custom-swaync.dnd-notification,
