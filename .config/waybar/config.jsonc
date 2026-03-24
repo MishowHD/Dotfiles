@@ -36,10 +36,12 @@
 
   // ─── System info ──────────────────────────────────────────────
   "cpu": {
-    "format": " {usage}%"
+    "format": " {usage}%",
+    "interval": 3
   },
   "memory": {
-    "format": " {}%"
+    "format": " {}%",
+    "interval": 3
   },
   "temperature": {
     "critical-threshold": 80,
@@ -48,7 +50,8 @@
       "󱃃",
       "󰔏",
       "󱃂"
-    ]
+    ],
+    "interval": 3
   },
   "battery": {
     "states": {
