@@ -113,7 +113,6 @@ window#waybar {
 /* ─── Clock ──────────────────────────────────────────────────── */
 #clock {
     color: @clock-color;
-    border-bottom-color: @clock-color;
     font-size: 15px;
     font-weight: bold;
 }
