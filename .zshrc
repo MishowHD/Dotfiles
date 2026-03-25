@@ -119,7 +119,7 @@ alias gl='git log --oneline --graph --decorate'
 alias gd='git diff'
 
 alias k='kubectl'
-
+alias kx='kubectx'
 
 # =============================================================================
 #  Plugins
