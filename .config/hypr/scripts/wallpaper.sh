@@ -17,5 +17,5 @@ WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -
 [[ ! -f "$WALLPAPER" ]] && exit 1
 
 wal -i "$WALLPAPER" -q -n
-swww img "$WALLPAPER" --transition-type grow --transition-duration 0.5 --transition-fps 60
+awww img "$WALLPAPER" --transition-type grow --transition-duration 0.5 --transition-fps 60
 swaync-client -rs
