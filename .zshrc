@@ -77,7 +77,7 @@ if command -v fzf &>/dev/null; then
   source <(fzf --zsh)
 
   export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 40%"
-  export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
+  export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-preview"
 fi
 
 
