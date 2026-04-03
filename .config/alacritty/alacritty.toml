@@ -1,14 +1,11 @@
-# --- THEME (Import) ---
+# --- THEME ---
+[general]
 import = ["~/.cache/wal/colors-alacritty.toml"]
 
-# --- WINDOW & APPEARANCE ---
+# --- WINDOW ---
 [window]
 opacity = 0.9
 dynamic_padding = true
-
-[window.padding]
-x = 10
-y = 10
 
 # --- FONT ---
 [font]
