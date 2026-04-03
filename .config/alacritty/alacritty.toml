@@ -1,22 +1,18 @@
-# Alacritty Configuration
-general.import = [
-    "~/.config/alacritty/catppuccin-mocha.toml"
-]
+# --- THEME (Import) ---
+import = ["~/.cache/wal/colors-alacritty.toml"]
 
+# --- WINDOW & APPEARANCE ---
 [window]
-opacity = 0.8
-dynamic_padding = false
-decorations = "full"
-startup_mode = "Windowed"
-
-[window.dimensions]
-columns = 100
-lines = 30
+opacity = 0.9
+dynamic_padding = true
 
 [window.padding]
 x = 10
 y = 10
 
+# --- FONT ---
 [font]
 size = 13.0
-normal = { family = "JetBrainsMono Nerd Font" }
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
