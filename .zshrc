@@ -50,7 +50,6 @@ setopt no_case_match         # case-insensitive pattern matching
 setopt globdots              # include dotfiles in glob results
 setopt extended_glob         # enable ^, ~, # glob operators
 setopt interactive_comments  # allow # comments in interactive shell
-unsetopt prompt_sp           # suppress blank line before prompt
 
 stty stop undef              # prevent Ctrl+S from freezing the terminal
 
@@ -136,8 +135,12 @@ alias kx='kubectx'
 # =============================================================================
 
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{4}%F{0} %D{%_I:%M%P} %K{5}%F{0} %n %K{6}%F{0} %~ %f%k ❯ "
+
+# Welcome line: showing date, uptime and kernel version
 print -P "${NEWLINE}%F{4} it's %D{%A, %B %d} %F{2} $(uptime -p | cut -c 4-) %F{3} $(uname -r) %f"
+
+# Initialize Starship (Modern, fast and functional prompt)
+eval "$(starship init zsh)"
 
 
 # =============================================================================
