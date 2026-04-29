@@ -11,7 +11,7 @@ normal = { family = "JetBrainsMono Nerd Font" }
 size = 13.0
 
 [scrolling]
-history = 3023
+history = 10000
 
 [cursor]
 style = { shape = "Block", blinking = "On" }
@@ -26,14 +26,3 @@ save_to_clipboard = false
 
 [bell]
 duration = 0
-
-[keyboard]
-bindings = [
-  { key = "C", mods = "Control|Shift", action = "Copy" },
-  { key = "V", mods = "Control|Shift", action = "Paste" },
-  { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
-  { key = "Equals", mods = "Control|Shift", action = "IncreaseFontSize" },
-  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
-  { key = "Key0", mods = "Control", action = "ResetFontSize" },
-  { key = "Enter", mods = "Shift", chars = "\n" },
-]
