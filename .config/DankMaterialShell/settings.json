@@ -175,12 +175,6 @@
   "greeterEnableFprint": false,
   "greeterEnableU2f": false,
   "greeterWallpaperPath": "",
-  "greeterUse24HourClock": true,
-  "greeterShowSeconds": false,
-  "greeterPadHours12Hour": false,
-  "greeterLockDateFormat": "",
-  "greeterFontFamily": "",
-  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -247,9 +241,9 @@
   "acSuspendTimeout": 1800,
   "acSuspendBehavior": 0,
   "acProfileName": "",
-  "batteryMonitorTimeout": 300,
-  "batteryLockTimeout": 300,
-  "batterySuspendTimeout": 900,
+  "batteryMonitorTimeout": 120,
+  "batteryLockTimeout": 120,
+  "batterySuspendTimeout": 600,
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
   "batteryChargeLimit": 100,
@@ -269,6 +263,10 @@
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": true,
+  "muxType": "tmux",
+  "muxUseCustomCommand": false,
+  "muxCustomCommand": "",
+  "muxSessionFilter": "",
   "runDmsMatugenTemplates": true,
   "matugenTemplateGtk": true,
   "matugenTemplateNiri": true,
@@ -435,6 +433,11 @@
         {
           "id": "memUsage",
           "enabled": true
+        },
+        {
+          "id": "cpuTemp",
+          "enabled": true,
+          "minimumWidth": true
         },
         {
           "id": "notificationButton",
