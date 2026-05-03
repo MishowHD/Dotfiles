@@ -21,8 +21,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt append_history      # append to $HISTFILE on exit, never overwrite
-setopt inc_append_history  # write each command immediately (survives crashes)
 setopt share_history       # share history in real time across all open shells
 setopt hist_ignore_dups    # skip consecutive duplicate entries
 setopt hist_ignore_space   # skip commands prefixed with a space
@@ -85,11 +83,9 @@ fi
 # =============================================================================
 
 export EDITOR=nvim
-export VISUAL=nvim
 export BROWSER=firefox
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
-export PAGER=bat
 export PATH="$HOME/.local/bin:$PATH"
 
 
