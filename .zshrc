@@ -97,7 +97,6 @@ alias c='clear'
 alias ff='fastfetch'
 alias v='$EDITOR'
 alias cat='bat --style=plain'
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias l='eza --icons=always'
 alias ls='eza --icons=always'
