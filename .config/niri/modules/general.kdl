@@ -4,6 +4,7 @@ config-notification {
 
 environment {
     XDG_CURRENT_DESKTOP "niri"
+    DMS_HIDE_TRAYIDS "nm-applet,blueman-applet"
 }
 
 hotkey-overlay {

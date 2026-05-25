@@ -1,41 +1,37 @@
 binds {
     // === System & Overview ===
-    Mod+D repeat=false { toggle-overview; }
     Mod+Tab repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // === Application Launchers ===
-    Mod+Return hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
-    Mod+B      hotkey-overlay-title="Open Browser"  { spawn "firefox"; }
-    Mod+E      hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
-    Mod+Space hotkey-overlay-title="Application Launcher" {
+    Mod+Return { spawn "alacritty"; }
+    Mod+B      { spawn "firefox"; }
+    Mod+E      { spawn "nautilus"; }
+    Mod+Space hotkey-overlay-title="Spotlight" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
-    Mod+V hotkey-overlay-title="Clipboard Manager" {
+    Mod+V hotkey-overlay-title="Clipboard" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }
     Mod+M hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
     }
 
-    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    Mod+Shift+Comma hotkey-overlay-title="Settings" {
+    Mod+X { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Mod+Shift+Comma {
         spawn "dms" "ipc" "call" "settings" "focusOrToggle";
     }
-    Mod+Y hotkey-overlay-title="Browse Wallpapers" {
+    Mod+Y {
         spawn "dms" "ipc" "call" "dankdash" "wallpaper";
     }
-    Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
+    Mod+N { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Mod+Shift+N { spawn "dms" "ipc" "call" "notepad" "toggle"; }
 
     // === Security ===
-    Alt+L hotkey-overlay-title="Lock Screen" {
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn "dms" "ipc" "call" "lock" "lock";
     }
     Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" {
-        spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
-    }
 
     // === Audio Controls ===
     XF86AudioRaiseVolume allow-when-locked=true {
@@ -84,52 +80,27 @@ binds {
     Mod+Shift+T { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
-    Mod+Shift+W hotkey-overlay-title="Create window rule" { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
+    Mod+Shift+W { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
 
     // === Focus Navigation ===
-    Mod+H hotkey-overlay-title="Focus Left"     { focus-column-left; }
-    Mod+J hotkey-overlay-title="Focus Down"     { focus-window-or-workspace-down; }
-    Mod+K hotkey-overlay-title="Focus Up"       { focus-window-or-workspace-up; }
-    Mod+L hotkey-overlay-title="Focus Right"    { focus-column-right; }
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-right; }
 
-    // === Window Movement ===
-    Mod+Shift+H hotkey-overlay-title="Move Left"     { move-column-left; }
-    Mod+Shift+J hotkey-overlay-title="Move Down"     { move-window-down-or-to-workspace-down; }
-    Mod+Shift+K hotkey-overlay-title="Move Up"       { move-window-up-or-to-workspace-up; }
-    Mod+Shift+L hotkey-overlay-title="Move Right"    { move-column-right; }
-
-    // === Column Navigation ===
-    Mod+G { focus-column-first; }
-    Mod+Shift+G  { focus-column-last; }
-    Mod+Ctrl+G { move-column-to-first; }
-    Mod+Ctrl+Shift+G  { move-column-to-last; }
+    // === Move Window/Column ===
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+J { move-window-down; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+L { move-column-right; }
 
     // === Monitor Navigation ===
-    Mod+Ctrl+H     { focus-monitor-left; }
-    Mod+Ctrl+J     { focus-monitor-down; }
-    Mod+Ctrl+K     { focus-monitor-up; }
-    Mod+Ctrl+L     { focus-monitor-right; }
+    Mod+Ctrl+Alt+H { focus-monitor-left; }
+    Mod+Ctrl+Alt+L { focus-monitor-right; }
 
     // === Move to Monitor ===
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-
-    // === Workspace Navigation ===
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
-
-    // === Workspace Management ===
-    Ctrl+Shift+R {
-        spawn "dms" "ipc" "call" "workspace-rename" "open";
-    }
-
-    // === Move Workspaces ===
-    Mod+Shift+U         { move-workspace-down; }
-    Mod+Shift+I         { move-workspace-up; }
+    Mod+Shift+Alt+H { move-column-to-monitor-left; }
+    Mod+Shift+Alt+L { move-column-to-monitor-right; }
 
     // === Mouse Wheel Navigation ===
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
@@ -170,8 +141,8 @@ binds {
     Mod+Shift+9 { move-column-to-workspace 9; }
 
     // === Column Management ===
-    Mod+Comma  hotkey-overlay-title="Consume/Expel Left"  { consume-or-expel-window-left; }
-    Mod+Period hotkey-overlay-title="Consume/Expel Right" { consume-or-expel-window-right; }
+    Mod+Comma  { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
 
     // === Sizing & Layout ===
     Mod+R { switch-preset-column-width; }
@@ -182,10 +153,10 @@ binds {
     Mod+Ctrl+C { center-visible-columns; }
 
     // === Manual Sizing ===
-    Mod+Alt+H hotkey-overlay-title="Shrink Column" { set-column-width "-10%"; }
-    Mod+Alt+L hotkey-overlay-title="Expand Column" { set-column-width "+10%"; }
-    Mod+Alt+K hotkey-overlay-title="Shrink Window" { set-window-height "-10%"; }
-    Mod+Alt+J hotkey-overlay-title="Expand Window" { set-window-height "+10%"; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
     XF86Launch1 { screenshot; }
