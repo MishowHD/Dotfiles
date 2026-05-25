@@ -1,7 +1,7 @@
 // This config is in the KDL format: https://kdl.dev
 
 // === Modules ===
-include "modules/general.kdl"
+include "modules/envvariable.kdl"
 include "modules/input.kdl"
 
 // === DMS Components ===
