@@ -34,6 +34,7 @@ binds {
     Mod+J { focus-window-or-workspace-down; }
     Mod+K { focus-window-or-workspace-up; }
     Mod+L { focus-column-right; }
+    Mod+T hotkey-overlay-title="Switch Floating/Tiling Focus" { switch-focus-between-floating-and-tiling; }
 
     // === Column/Window Movement ===
     Mod+Shift+H { move-column-left; }
