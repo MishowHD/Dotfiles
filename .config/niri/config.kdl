@@ -3,7 +3,6 @@
 // === Modules ===
 include "modules/general.kdl"
 include "modules/input.kdl"
-include "modules/animations.kdl"
 
 // === DMS Components ===
 include "dms/colors.kdl"
