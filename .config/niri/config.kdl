@@ -13,3 +13,8 @@ include "dms/outputs.kdl"
 include "dms/cursor.kdl"
 include "dms/windowrules.kdl"
 include "dms/wpblur.kdl"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
