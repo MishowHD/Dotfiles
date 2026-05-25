@@ -30,10 +30,10 @@ window-rule {
     draw-border-with-background false
 }
 
-window-rule {
-    match is-active=false
-    opacity 0.9
-}
+// window-rule {
+//     match is-active=false
+//     opacity 0.9
+// }
 
 window-rule {
     match app-id=r#"^gnome-control-center$"#
