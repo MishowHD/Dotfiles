@@ -8,8 +8,6 @@ include "modules/general.kdl"
 include "modules/autostart.kdl"
 include "modules/input.kdl"
 include "modules/animations.kdl"
-include "modules/layout.kdl"
-include "modules/window-rules.kdl"
 
 // === DMS Components ===
 include "dms/colors.kdl"
