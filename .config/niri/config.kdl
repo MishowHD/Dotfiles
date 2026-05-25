@@ -1,0 +1,21 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+// === Modules ===
+include "modules/general.kdl"
+include "modules/input.kdl"
+include "modules/animations.kdl"
+include "modules/layout.kdl"
+include "modules/window-rules.kdl"
+
+// === DMS Components ===
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+include "dms/alttab.kdl"
+include "dms/binds.kdl"
+include "dms/outputs.kdl"
+include "dms/cursor.kdl"
+include "dms/windowrules.kdl"
+include "dms/wpblur.kdl"
