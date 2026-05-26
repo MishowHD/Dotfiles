@@ -1,55 +1,14 @@
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
-}
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
 
+// @id=wr_1779786945080774735 @name=org.quickshell
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    match app-id="Alacritty"
-    match app-id="zen"
-    match app-id="com.mitchellh.ghostty"
-    match app-id="kitty"
-    draw-border-with-background false
-}
-
-// window-rule {
-//     match is-active=false
-//     opacity 0.9
-// }
-
-window-rule {
-    match app-id=r#"^gnome-control-center$"#
-    match app-id=r#"^pavucontrol$"#
-    match app-id=r#"^nm-connection-editor$"#
-    default-column-width { proportion 0.5; }
-    open-floating false
-}
-
-window-rule {
-    match app-id=r#"^org\.gnome\.Calculator$"#
-    match app-id=r#"^gnome-calculator$"#
-    match app-id=r#"^galculator$"#
-    match app-id=r#"^blueman-manager$"#
-    match app-id=r#"^org\.gnome\.Nautilus$"#
-    match app-id=r#"^xdg-desktop-portal$"#
+    match app-id="^org.quickshell$"
     open-floating true
 }
 
+// @id=wr_1779787332563403649 @name=Global rounded corners
 window-rule {
-    match app-id=r#"^steam$"# title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="bottom-right"
-    open-focused false
-}
-
-window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id="zoom"
-    open-floating true
-}
-
-// Open DMS windows as floating by default
-window-rule {
-    match app-id=r#"org.quickshell$"#
-    match app-id=r#"com.danklinux.dms$"#
-    open-floating true
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
