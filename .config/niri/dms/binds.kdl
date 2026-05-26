@@ -17,7 +17,6 @@ binds {
     // === Session & Security ===
     Mod+Alt+L { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+X     { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    Mod+Shift+E { quit; }
     Mod+Shift+Slash { spawn "dms" "ipc" "call" "keybinds" "toggle" "niri"; }
 
     // === Window Management ===
