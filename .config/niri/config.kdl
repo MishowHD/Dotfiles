@@ -3,6 +3,7 @@
 // === Modules ===
 include "modules/envvariable.kdl"
 include "modules/input.kdl"
+include "modules/settings.kdl"
 
 // === DMS Components ===
 include "dms/colors.kdl"
@@ -13,8 +14,3 @@ include "dms/outputs.kdl"
 include "dms/cursor.kdl"
 include "dms/windowrules.kdl"
 include "dms/wpblur.kdl"
-
-hotkey-overlay {
-    skip-at-startup
-}
-
