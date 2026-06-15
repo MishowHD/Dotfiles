@@ -1,0 +1,29 @@
+# User's old directory
+^old$
+^old/.*
+
+# Version Control
+^\.git$
+^\.git/.*
+^\.gitignore$
+^\.gitmodules$
+^CVS$
+^RCS$
+^\.svn$
+^\.hg$
+^_darcs$
+
+# Documentation
+^README.*
+^LICENSE.*
+^COPYING.*
+^ChangeLog.*
+
+# Editor backups and temp files
+.*~
+^#.*#$
+^\.#.*$
+
+# Stow's own ignore file
+^\.stow-local-ignore$
+^\.stow-global-ignore$
