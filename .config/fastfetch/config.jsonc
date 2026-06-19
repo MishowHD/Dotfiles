@@ -1,85 +1,132 @@
-// Adapted from ml4w's configuration
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "type": "small",
-        "padding": {
-            "top": 1
-        }
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    {
+      "type": "host",
+      "key": "╭─󰌢",
+      "keyColor": "green"
     },
-    "display": {
-        "separator": " "
+    {
+      "type": "cpu",
+      "key": "├─󰻠",
+      "keyColor": "green"
     },
-    "modules": [
-        {
-            "key": "╭───────────╮",
-            "type": "custom"
-        },
-        {
-            "key": "│ {#31} user    {#keys}│",
-            "type": "title",
-            "format": "{user-name}"
-        },
-        {
-            "key": "│ {#32}󰇅 hname   {#keys}│",
-            "type": "title",
-            "format": "{host-name}"
-        },
-        {
-            "key": "│ {#33}󰅐 uptime  {#keys}│",
-            "type": "uptime"
-        },
-        {
-            "key": "│ {#34}󱦟 age     {#keys}│",
-            "type": "disk",
-            "folders": "/",
-            "format": "{days} days"
-        },
-        {
-            "key": "│ {#35}{icon} distro  {#keys}│",
-            "type": "os"
-        },
-        {
-            "key": "│ {#36} kernel  {#keys}│",
-            "type": "kernel"
-        },
-        {
-            "key": "│ {#37} wm      {#keys}│",
-            "type": "wm"
-        },
-        {
-            "key": "│ {#31} term    {#keys}│",
-            "type": "terminal"
-        },
-        {
-            "key": "│ {#32} shell   {#keys}│",
-            "type": "shell"
-        },
-        {
-            "key": "│ {#33}󰍛 cpu     {#keys}│",
-            "type": "cpu"
-        },
-        {
-            "key": "│ {#34}󰉉 disk    {#keys}│",
-            "type": "disk",
-            "folders": "/"
-        },
-        {
-            "key": "│ {#36} memory  {#keys}│",
-            "type": "memory"
-        },
-        {
-            "key": "├───────────┤",
-            "type": "custom"
-        },
-        {
-            "key": "│ {#39} colors  {#keys}│",
-            "type": "colors",
-            "symbol": "circle"
-        },
-        {
-            "key": "╰───────────╯",
-            "type": "custom"
-        }
-    ]
+    {
+      "type": "gpu",
+      "key": "├─󰍛",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": "├─󰑭",
+      "keyColor": "green"
+    },
+    {
+      "type": "swap",
+      "key": "├─󰓡",
+      "keyColor": "green"
+    },
+    {
+      "type": "display",
+      "key": "├─󰍹",
+      "keyColor": "green"
+    },
+    {
+      "type": "battery",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
+      "type": "poweradapter",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
+      "type": "bluetooth",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
+      "type": "sound",
+      "key": "╰─",
+      "keyColor": "green"
+    },
+    "break",
+    {
+      "type": "shell",
+      "key": "╭─",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "key": "├─",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminalfont",
+      "key": "├─",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "lm",
+      "key": "├─󰧨",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "de",
+      "key": "├─",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wm",
+      "key": "╰─",
+      "keyColor": "yellow"
+    },
+    "break",
+    {
+      "type": "title",
+      "key": "╭─",
+      "format": "{user-name}@{host-name}",
+      "keyColor": "blue"
+    },
+    {
+      "type": "os",
+      "key": "├─{icon}", // Just get your distro's logo off nerdfonts.com
+      "keyColor": "blue"
+    },
+    {
+      "type": "kernel",
+      "key": "├─",
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": "├─󰏖",
+      "keyColor": "blue"
+    },
+    {
+      "type": "uptime",
+      "key": "├─󰅐",
+      "keyColor": "blue"
+    },
+    {
+      "type": "media",
+      "key": "├─󰝚",
+      "keyColor": "blue"
+    },
+    {
+      "type": "localip",
+      "key": "╰─󰩟",
+      "compact": true,
+      "keyColor": "blue"
+    }
+  ]
 }
