@@ -121,9 +121,7 @@ alias kx='kubectx'
 #  Must be sourced after all bindkey calls — wraps zle widgets internally
 # =============================================================================
 
-[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] &&
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 
 # =============================================================================
 #  Prompt & Welcome
