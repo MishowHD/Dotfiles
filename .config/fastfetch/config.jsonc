@@ -4,6 +4,44 @@
     "separator": " "
   },
   "modules": [
+        {
+      "type": "title",
+      "key": "╭─",
+      "format": "{user-name}@{host-name}",
+      "keyColor": "blue"
+    },
+    {
+      "type": "os",
+      "key": "├─{icon}", // Just get your distro's logo off nerdfonts.com
+      "keyColor": "blue"
+    },
+    {
+      "type": "kernel",
+      "key": "├─",
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": "├─󰏖",
+      "keyColor": "blue"
+    },
+    {
+      "type": "uptime",
+      "key": "├─󰅐",
+      "keyColor": "blue"
+    },
+    {
+      "type": "media",
+      "key": "├─󰝚",
+      "keyColor": "blue"
+    },
+    {
+      "type": "localip",
+      "key": "╰─󰩟",
+      "compact": true,
+      "keyColor": "blue"
+    },
+    "break",
     {
       "type": "host",
       "key": "╭─󰌢",
@@ -45,11 +83,6 @@
       "keyColor": "green"
     },
     {
-      "type": "poweradapter",
-      "key": "├─",
-      "keyColor": "green"
-    },
-    {
       "type": "bluetooth",
       "key": "├─",
       "keyColor": "green"
@@ -71,16 +104,6 @@
       "keyColor": "yellow"
     },
     {
-      "type": "terminalfont",
-      "key": "├─",
-      "keyColor": "yellow"
-    },
-    {
-      "type": "lm",
-      "key": "├─󰧨",
-      "keyColor": "yellow"
-    },
-    {
       "type": "de",
       "key": "├─",
       "keyColor": "yellow"
@@ -90,43 +113,5 @@
       "key": "╰─",
       "keyColor": "yellow"
     },
-    "break",
-    {
-      "type": "title",
-      "key": "╭─",
-      "format": "{user-name}@{host-name}",
-      "keyColor": "blue"
-    },
-    {
-      "type": "os",
-      "key": "├─{icon}", // Just get your distro's logo off nerdfonts.com
-      "keyColor": "blue"
-    },
-    {
-      "type": "kernel",
-      "key": "├─",
-      "keyColor": "blue"
-    },
-    {
-      "type": "packages",
-      "key": "├─󰏖",
-      "keyColor": "blue"
-    },
-    {
-      "type": "uptime",
-      "key": "├─󰅐",
-      "keyColor": "blue"
-    },
-    {
-      "type": "media",
-      "key": "├─󰝚",
-      "keyColor": "blue"
-    },
-    {
-      "type": "localip",
-      "key": "╰─󰩟",
-      "compact": true,
-      "keyColor": "blue"
-    }
   ]
 }
