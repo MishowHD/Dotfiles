@@ -27,18 +27,7 @@
     },
     {
       "type": "uptime",
-      "key": "├─󰅐",
-      "keyColor": "blue"
-    },
-    {
-      "type": "media",
-      "key": "├─󰝚",
-      "keyColor": "blue"
-    },
-    {
-      "type": "localip",
-      "key": "╰─󰩟",
-      "compact": true,
+      "key": "╰─󰅐",
       "keyColor": "blue"
     },
     "break",
