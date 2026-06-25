@@ -4,7 +4,7 @@
     "separator": " "
   },
   "modules": [
-        {
+    {
       "type": "title",
       "key": "╭─",
       "format": "{user-name}@{host-name}",
@@ -27,8 +27,15 @@
     },
     {
       "type": "uptime",
-      "key": "╰─󰅐",
+      "key": "├─󰅐",
       "keyColor": "blue"
+    },
+    {
+      "type": "disk",
+      "key": "╰─󱦟",
+      "keyColor": "blue",
+      "folders": "/",
+      "format": "{days} days"
     },
     "break",
     {
