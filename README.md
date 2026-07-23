@@ -1,7 +1,8 @@
 # Dotfiles
 
-This repository contains my **personal Linux dotfiles**, managed using **GNU Stow**. It is intended to quickly reproduce a consistent user and development environment across multiple machines.
+> **Notice:** This repository is no longer maintained. My NixOS configuration has moved to [MishowHD/mishow-nix](https://github.com/MishowHD/mishow-nix.git).
 
+This repository contains my **personal Linux dotfiles**, managed using **GNU Stow**. It is intended to quickly reproduce a consistent user and development environment across multiple machines.
 The focus is on simplicity, transparency, and version control of configuration files.
 
 ## Overview
@@ -38,7 +39,6 @@ Example structure:
 * `stow`
 * Applications corresponding to the provided configuration files (e.g. `zsh`, window manager, CLI tools)
 
-
 ## Installation
 
 Clone the repository into your home directory (or any preferred location):
@@ -71,4 +71,3 @@ This will create the appropriate symbolic links in `$HOME`.
 ## License
 
 This repository is licensed under the **MIT License**. See the `LICENSE` file for details.
-
